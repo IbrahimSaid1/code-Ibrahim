@@ -37,7 +37,7 @@ public class first {
 				obj.setLocation(location);
 				
 			
-				
+				//options
 				boolean option=true;
 				boolean option1=true;
 				boolean option2=true;
@@ -151,7 +151,6 @@ public class first {
 				
 				System.out.println("Do you Want to add more department? \n1-yes 2-No");
 				int z= sca.nextInt();
-				//dep.add(obj1);
 				if(z==1) {
 				option=true;
 				}
