@@ -221,6 +221,7 @@ public class first {
 
 			}				
 			
+			//For teacher class
 			else if(i==4) {
 				
 				Teacher obj2= new Teacher();
@@ -237,6 +238,8 @@ public class first {
 				System.out.println("\n\n ");
 
 			}
+			
+			//student class
 			else if(i==5) {
 				
 				Student obj3= new Student();
@@ -275,6 +278,8 @@ public class first {
 						System.out.println("\n\n ");					}
 			}
 			
+			
+			//course class
 			else if(i==6) {
 				
 				Course obj4= new Course();
