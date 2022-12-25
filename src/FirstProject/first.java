@@ -12,13 +12,13 @@ public class first {
 		boolean condition =true;
 		while(condition) {
 			System.out.println("\n ");
-			System.out.println("1- create object chaining");
-			System.out.println("2- School");
-			System.out.println("3- Department");
-			System.out.println("4- Teacher");
-			System.out.println("5- Student");
-			System.out.println("6- Course");
-			System.out.println("7- Mark");
+			System.out.println("1- create object chaining"); //For all classes
+			System.out.println("2- School"); //For school class only
+			System.out.println("3- Department"); //For department class only
+			System.out.println("4- Teacher"); //For teacher class only
+			System.out.println("5- Student"); // For student class only
+			System.out.println("6- Course"); //For course class only
+			System.out.println("7- Mark");  //For mark class only
 			System.out.println("8- Exit");
 
 
