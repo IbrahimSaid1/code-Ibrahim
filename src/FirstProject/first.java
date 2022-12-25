@@ -174,7 +174,6 @@ public class first {
 									for(Mark mark : cour.getMar()) {
 									System.out.println("Its mark is: "+mark.getCourseMark());
 									System.out.println("----------------------------------------------------");
-									System.out.println("----------------------------------------------------");
 
 						 }
 					 }
