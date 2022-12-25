@@ -157,7 +157,6 @@ public class first {
 				}
 				if(z==2) {
 					
-					System.out.println("\n ");
 					System.out.println("School Name is "+obj.getSchoolName());
 					System.out.println("Its location in: "+obj.getLocation());
 					 for(Department department : dep) {
