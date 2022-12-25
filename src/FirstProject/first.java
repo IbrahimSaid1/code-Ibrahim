@@ -189,7 +189,7 @@ public class first {
 					
 				
 	
-	
+			//For school class
 			else if(i==2) {
 			
 				School obj= new School();
