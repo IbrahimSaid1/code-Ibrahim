@@ -24,6 +24,7 @@ public class first {
 
 			int i= sca.nextInt();
 			
+			//For all classes
 			if(i==1) {
 				
 				System.out.println("Create object chainin!");
