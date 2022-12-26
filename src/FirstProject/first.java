@@ -1,17 +1,17 @@
 package FirstProject;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class first {
 
 	public static void main(String[] args) {
 		
 		ArrayList<Department> dep = new ArrayList<Department>();
-
+		Stack<String> myStack= new Stack<>();
 		Scanner sca= new Scanner(System.in);
 		boolean condition =true;
 		while(condition) {
-			System.out.println("\n ");
 			System.out.println("1- create object chaining"); //For all classes
 			System.out.println("2- School"); //For school class only
 			System.out.println("3- Department"); //For department class only
@@ -19,7 +19,8 @@ public class first {
 			System.out.println("5- Student"); // For student class only
 			System.out.println("6- Course"); //For course class only
 			System.out.println("7- Mark");  //For mark class only
-			System.out.println("8- Exit");
+			System.out.println("8- History");
+			System.out.println("9- Exit");
 
 
 			int i= sca.nextInt();
@@ -36,7 +37,8 @@ public class first {
 				System.out.print("Please enter school location: ");
 				String location= sca.next();
 				obj.setLocation(location);
-				
+				myStack.push(sName);
+				myStack.push(location);
 			
 				//options
 				boolean option=true;
@@ -52,6 +54,7 @@ public class first {
 				String dName= sca.next();
 				obj1.setDepartmentName(dName);
 				option1=true;
+				myStack.push(dName);
 				
 				dep.add(obj1);
 				
@@ -60,9 +63,12 @@ public class first {
 				System.out.print("Please enter teacher name: ");
 				String tName= sca.next();
 				obj2.setTeacherName(tName);
+				myStack.push(tName);
 				System.out.print("Please enter teacher ID: ");
 				int teacherId= sca.nextInt();
 				obj2.setTeacherId(teacherId);
+				String Id= Integer.toString(teacherId);
+				myStack.push(Id);
 				
 				obj1.teach.add(obj2);
 				
@@ -73,9 +79,13 @@ public class first {
 					System.out.print("Please enter student name: ");
 					String stusentName= sca.next();
 					obj3.setStudentName(stusentName);
+					myStack.push(stusentName);
 					System.out.print("Please enter student ID: ");
 					int studentId= sca.nextInt();
-					obj3.setStudentId(studentId);	
+					obj3.setStudentId(studentId);
+					String Id2= Integer.toString(studentId);
+					myStack.push(Id2); 
+
 					option3=true;
 					
 					obj2.student.add(obj3);
@@ -85,9 +95,11 @@ public class first {
 					System.out.print("Please enter course name: ");
 					String courseName= sca.next();
 					obj4.setCourseName(courseName);
+					myStack.push(courseName);
 					System.out.print("Please enter course key: ");
 					String courseKey= sca.next();
 					obj4.setCoursekey(courseKey);
+					myStack.push(courseKey);
 					option4=true;
 					
 					obj3.cou.add(obj4);
@@ -97,6 +109,8 @@ public class first {
 					System.out.print("Please enter the mark: ");
 					int courseMark= sca.nextInt();
 					obj5.setCourseMark(courseMark);
+					String mark= Integer.toString(courseMark);
+					myStack.push(mark);
 					
 					obj4.mar.add(obj5);
 					
@@ -157,6 +171,7 @@ public class first {
 				}
 				if(z==2) {
 					
+					System.out.print("\n");
 					System.out.println("School Name is "+obj.getSchoolName());
 					System.out.println("Its location in: "+obj.getLocation());
 					 for(Department department : dep) {
@@ -172,7 +187,7 @@ public class first {
 									System.out.println("Its key is: "+cour.getCoursekey());
 									for(Mark mark : cour.getMar()) {
 									System.out.println("Its mark is: "+mark.getCourseMark());
-									System.out.println("----------------------------------------------------");
+									System.out.println("----------------------------------");
 
 						 }
 					 }
@@ -324,8 +339,17 @@ public class first {
 						System.out.println("\n\n ");
 					}
 			}
+		
+			else if (i==8) {
+				System.out.print("\n");
+				for(String stack : myStack) {
+				System.out.println(stack);
+			}
+				System.out.print("\n");
+				System.out.println("Thank you");
+			}
 			
-			else if(i==8) {
+			else if(i==9) {
 				
 				condition= false;
 				System.out.print("The end");
