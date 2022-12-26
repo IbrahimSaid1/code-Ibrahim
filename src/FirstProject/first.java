@@ -342,11 +342,11 @@ public class first {
 		
 			else if (i==8) {
 				System.out.print("\n");
+				System.out.println("History");
 				for(String stack : myStack) {
 				System.out.println(stack);
 			}
 				System.out.print("\n");
-				System.out.println("Thank you");
 			}
 			
 			else if(i==9) {
