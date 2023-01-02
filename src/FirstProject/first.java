@@ -1,12 +1,14 @@
 package FirstProject;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class first {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws IOException {
 		ArrayList<Department> dep = new ArrayList<Department>();
 		Stack<String> myStack= new Stack<>();
 		Scanner sca= new Scanner(System.in);
@@ -27,6 +29,9 @@ public class first {
 			
 			//For all classes
 			if(i==1) {
+				try {
+					 BufferedWriter writer = new BufferedWriter(new FileWriter("info.txt"));
+					 writer.write("This is my text file...");
 				
 				System.out.println("Create object chainin!");
 				
@@ -188,16 +193,32 @@ public class first {
 									for(Mark mark : cour.getMar()) {
 									System.out.println("Its mark is: "+mark.getCourseMark());
 									System.out.println("----------------------------------");
-
+									
+									 
+									
+									
+									
 						 }
 					 }
 					}
 				 }
 				}
+					 
 					option= false;
 				}
 				}
-					
+				for (String list : myStack)
+				 {
+				 writer.write("\n"+list);
+				 }
+				 writer.close();
+				 } catch (IOException e) {
+				 System.out.println("Error...");
+				 e.printStackTrace();
+				 }	
+				finally {
+					System.out.println("Finally");
+				}
 			}	
 					
 				
@@ -254,7 +275,7 @@ public class first {
 			
 			//student class
 			else if(i==5) {
-				
+				try {
 				Student obj3= new Student();
 				System.out.print("Please enter student name: ");
 				String stusentName= sca.next();
@@ -274,24 +295,31 @@ public class first {
 				System.out.println("Its mark is: "+obj5.getCourseMark());
 				
 				if(courseMark>=60) {
-					System.out.println("\n ");
-					System.out.println("PASS");
-					System.out.println("\n ");
-					System.out.println("[| o o |]");
-			        System.out.println(" |  v | ");
-					System.out.println("\n\n ");
+					throw new ArithmeticException();
 				}
 				
+				
 					else if(courseMark<60) {
+						throw new Exception();
+										}
+				
+			} catch (ArithmeticException e) {
 						System.out.println("\n ");
+						System.out.println("PASS");
+						System.out.println("\n ");
+						System.out.println("[| o o |]");
+				        System.out.println(" |  v | ");
+						System.out.println("\n\n ");
+					}
+				 catch (Exception e) {
+					 System.out.println("\n ");
 						System.out.println("FALL");
 						System.out.println("\n ");
 						System.out.println("[| o o |]");
 				        System.out.println(" |  ^  | ");
-						System.out.println("\n\n ");					}
+						System.out.println("\n\n ");	
+					}
 			}
-			
-			
 			//course class
 			else if(i==6) {
 				
@@ -359,3 +387,5 @@ public class first {
 	}
 
 }
+
+
